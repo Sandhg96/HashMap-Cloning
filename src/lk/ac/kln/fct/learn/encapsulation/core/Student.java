@@ -1,7 +1,7 @@
 package lk.ac.kln.fct.learn.encapsulation.core;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Map.Entry;
 
 public class Student {
 	private Integer studentID;
@@ -54,7 +54,7 @@ public class Student {
 	public HashMap<String, Subject> getSubjects() {
 		HashMap<String, Subject> deepCopy = new HashMap<String, Subject>();
 		
-		for(Map.Entry<String, Subject> entry: subjects.entrySet()) {
+		for(Entry<String, Subject> entry: subjects.entrySet()) {
 			deepCopy.put(entry.getKey(), new Subject(entry.getValue().getSubjectID(), entry.getValue().getSubjectName(), entry.getValue().getAllowedDegrees()));
 		}
 		return deepCopy;

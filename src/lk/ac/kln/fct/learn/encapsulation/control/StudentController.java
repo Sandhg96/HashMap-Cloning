@@ -1,7 +1,7 @@
 package lk.ac.kln.fct.learn.encapsulation.control;
 
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Map.Entry;
 
 import lk.ac.kln.fct.learn.encapsulation.core.Student;
 import lk.ac.kln.fct.learn.encapsulation.core.Subject;
@@ -16,7 +16,7 @@ public class StudentController {
 	
 	public HashMap<Integer, Student> getStudents() {
 		HashMap<Integer, Student> deepCopy = new HashMap<Integer, Student>();
-		for(Map.Entry<Integer, Student> entry: students.entrySet()) {
+		for(Entry<Integer, Student> entry: students.entrySet()) {
 			deepCopy.put(entry.getKey(), new Student(entry.getValue().getStudentID(), entry.getValue().getName(), entry.getValue().getDegree(),
 					entry.getValue().getSubjects(), entry.getValue().getGpa()));
 		}
